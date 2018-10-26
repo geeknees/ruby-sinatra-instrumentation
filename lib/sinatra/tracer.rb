@@ -17,13 +17,13 @@ module Sinatra
 
       def patch_render
         ::Sinatra::Base.module_eval do
-          alias_method :render_old, :render
+          alias_method :render_original, :render
 
           def render(engine, data, options = {}, locals = {}, &block)
             result = ""
 
             OpenTracing.global_tracer.start_active_span("Rendering View") do |scope|
-              result = render_old(engine, data, options, locals, &block)
+              result = render_original(engine, data, options, locals, &block)
               scope.span.set_tag("sinatra.template", data)
             end
 

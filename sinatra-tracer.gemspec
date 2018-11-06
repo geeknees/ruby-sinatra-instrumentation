@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Tracer for Sinatra applications}
   spec.description   = %q{OpenTracing compatible auto-instrumentation for Sinatra web applications.}
-  spec.homepage      = "http://github.com/achandras/sinatra-tracer"
+  spec.homepage      = "http://github.com/signalfx/sinatra-tracer"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

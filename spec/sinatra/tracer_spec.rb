@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'rack/test'
+require 'test_app'
 
 RSpec.describe Sinatra::Tracer do
   describe "Class Methods" do
@@ -12,11 +14,24 @@ RSpec.describe Sinatra::Tracer do
 
       Sinatra::Tracer.registered(Sinatra::Base)
     end
+  end
+end
 
-    it "calls the patch_render method" do
-      expect(Sinatra::Tracer).to receive(:patch_render)
+# verify that it adds spans as expected
+RSpec.describe TestApp do
+  include Rack::Test::Methods
 
-      Sinatra::Tracer.registered(Sinatra::Base)
-    end
+  def app
+    TestApp.new
+  end
+
+  it "adds spans" do
+    OpenTracing.global_tracer = OpenTracingTestTracer.build
+
+    require 'sinatra/tracer'
+
+    get "/"
+
+    expect(OpenTracing.global_tracer.spans.count).to be > 0
   end
 end

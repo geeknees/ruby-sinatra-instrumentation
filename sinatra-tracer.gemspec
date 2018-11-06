@@ -40,5 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rubocop", "~> 0.60"
   spec.add_development_dependency "rubocop-rspec", "~> 1.30.0"
   spec.add_development_dependency "sinatra", "~> 1.4"
+  spec.add_development_dependency "rack-test", "~> 1.1"
 
 end

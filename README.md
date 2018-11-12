@@ -36,6 +36,11 @@ class SinatraApp < Sinatra::Base
 end
 ```
 
+## Tags
+
+In addition to the standard OpenTracing tags, the instrumentation also adds:
+- `sinatra.template`: the name of the view template, or if rendering a string with view code, the contents of the string.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

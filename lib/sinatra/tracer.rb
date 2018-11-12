@@ -22,7 +22,7 @@ module Sinatra
           def render(engine, data, options = {}, locals = {}, &block)
             result = ""
 
-            OpenTracing.global_tracer.start_active_span("Rendering View") do |scope|
+            OpenTracing.global_tracer.start_active_span("sinatra.render") do |scope|
               result = render_original(engine, data, options, locals, &block)
               scope.span.set_tag("sinatra.template", data)
             end

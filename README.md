@@ -1,7 +1,6 @@
 # Sinatra::Tracer
 
-Auto-instrumenter for Sinatra applications. It traces routes using
-`Rack::Tracer` and patches Sinatra to trace template rendering.
+Auto-instrumenter for Sinatra applications.
 
 ## Installation
 
@@ -21,25 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-In a classic Sinatra application, this can be used by requiring the library:
-
-```ruby
-require 'sinatra/tracer'
-```
-
-A modular application will need to register it manually:
-
-```ruby
-class SinatraApp < Sinatra::Base
-    register Sinatra::Tracer
-    ...
-end
-```
-
-## Tags
-
-In addition to the standard OpenTracing tags, the instrumentation also adds:
-- `sinatra.template`: the name of the view template, or if rendering a string with view code, the contents of the string.
+TODO: Write usage instructions here
 
 ## Development
 

@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+
+gem 'sinatra', '~> 1.4'
+gem 'jaeger-client', '~> 0.6.1'
+gem 'sinatra-tracer', '~> 0.1.0'

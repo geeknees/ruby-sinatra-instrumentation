@@ -4,14 +4,14 @@ require 'jaeger/client'
 require 'jaeger/client/http_sender'
 require 'logger'
 
-require 'sinatra/tracer'
+require 'sinatra/instrumentation'
 
 accessToken = ""
 headers = { }
 service_name = "sinatra-tracer-test"
 encoder = Jaeger::Client::Encoders::ThriftEncoder.new(service_name: service_name)
 httpsender = Jaeger::Client::HttpSender.new(url: "http://localhost:14268/api/traces", headers: headers, encoder: encoder, logger: Logger.new(STDOUT))
-OpenTracing.global_tracer = Jaeger::Client.build(service_name: service_name, sender: httpsender)
+OpenTracing.global_tracer = Jaeger::Client.build(service_name: service_name, sender: httpsender, propagate_b3: true)
 
 get '/' do
   "#{hello}"
@@ -20,6 +20,10 @@ end
 get '/render' do
   code = "<%= Time.now %>"
   erb code
+end
+
+get '/rendererb' do
+  erb :index
 end
 
 def hello

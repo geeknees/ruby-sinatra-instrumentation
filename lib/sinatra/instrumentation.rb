@@ -1,10 +1,10 @@
 require 'rack/tracer'
 require 'sinatra/base'
-require 'sinatra/tracer/version'
+require 'sinatra/instrumentation/version'
 require 'opentracing'
 
 module Sinatra
-  module Tracer
+  module Instrumentation
 
     class << self
 
@@ -35,5 +35,5 @@ module Sinatra
     end
   end
 
-  register Tracer
+  register Instrumentation
 end

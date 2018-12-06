@@ -1,4 +1,4 @@
-# Sinatra::Tracer
+# Sinatra::Instrumentation
 
 Auto-instrumenter for Sinatra applications. It traces routes using
 `Rack::Tracer` and patches Sinatra to trace template rendering.
@@ -8,7 +8,7 @@ Auto-instrumenter for Sinatra applications. It traces routes using
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sinatra-tracer'
+gem 'sinatra-instrumentation'
 ```
 
 And then execute:
@@ -17,21 +17,21 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sinatra-tracer
+    $ gem install sinatra-instrumentation
 
 ## Usage
 
 In a classic Sinatra application, this can be used by requiring the library:
 
 ```ruby
-require 'sinatra/tracer'
+require 'sinatra/instrumentation'
 ```
 
 A modular application will need to register it manually:
 
 ```ruby
 class SinatraApp < Sinatra::Base
-    register Sinatra::Tracer
+    register Sinatra::Instrumentation
     ...
 end
 ```
@@ -49,7 +49,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/achandras/sinatra-tracer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/signalfx/ruby-sinatra-instrumentation.
 
 ## License
 

@@ -25,13 +25,14 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "opentracing_test_tracer", "~> 0.1"
-  spec.add_development_dependency "rack-tracer", "~>0.8.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop", "~> 0.60"
   spec.add_development_dependency "rubocop-rspec", "~> 1.30.0"
   spec.add_development_dependency "sinatra", "~> 1.4"
   spec.add_development_dependency "rack-test", "~> 1.1"
+
   spec.add_dependency "opentracing", "~> 0.3"
+  spec.add_dependency "rack-tracer", "~>0.8.0"
 
 end

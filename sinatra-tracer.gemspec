@@ -1,27 +1,18 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "sinatra/tracer/version"
+require "sinatra/instrumentation/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "sinatra-tracer"
-  spec.version       = Sinatra::Tracer::VERSION
+  spec.name          = "sinatra-instrumentation"
+  spec.version       = Sinatra::Instrumentation::VERSION
   spec.authors       = ["Ashwin Chandrasekar"]
   spec.email         = ["achandrasekar@signalfx.com"]
 
-  spec.summary       = %q{Tracer for Sinatra applications}
+  spec.summary       = %q{Instrumentation for Sinatra applications}
   spec.description   = %q{OpenTracing compatible auto-instrumentation for Sinatra web applications.}
-  spec.homepage      = "http://github.com/signalfx/sinatra-tracer"
+  spec.homepage      = "http://github.com/signalfx/ruby-sinatra-instrumentation"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  # if spec.respond_to?(:metadata)
-  #   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  # else
-  #   raise "RubyGems 2.0 or newer is required to protect against " \
-  #     "public gem pushes."
-  # end
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -41,5 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rubocop-rspec", "~> 1.30.0"
   spec.add_development_dependency "sinatra", "~> 1.4"
   spec.add_development_dependency "rack-test", "~> 1.1"
+  spec.add_dependency "opentracing", "~> 0.3"
 
 end

@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rack/test'
 require 'test_app'
 
-RSpec.describe Sinatra::Tracer do
+RSpec.describe Sinatra::Instrumentation do
   describe "Class Methods" do
     it { should respond_to :registered }
     it { should respond_to :patch_render }
@@ -12,7 +12,7 @@ RSpec.describe Sinatra::Tracer do
     it "adds Rack::Tracer middleware" do
       expect(Sinatra::Base).to receive(:use).with(Rack::Tracer)
 
-      Sinatra::Tracer.registered(Sinatra::Base)
+      Sinatra::Instrumentation.registered(Sinatra::Base)
     end
   end
 end
@@ -28,7 +28,7 @@ RSpec.describe TestApp do
   it "adds spans" do
     OpenTracing.global_tracer = OpenTracingTestTracer.build
 
-    require 'sinatra/tracer'
+    require 'sinatra/instrumentation'
 
     get "/"
 

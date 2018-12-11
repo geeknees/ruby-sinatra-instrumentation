@@ -3,6 +3,11 @@
 Auto-instrumenter for Sinatra applications. It traces routes using
 `Rack::Tracer` and patches Sinatra to trace template rendering.
 
+## Supported Versions
+
+- MRI Ruby 2.0 and newer
+- Sinatra 1.1.4 and newer
+
 ## Installation
 
 Add this line to your application's Gemfile:

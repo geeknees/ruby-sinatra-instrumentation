@@ -34,6 +34,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rack-test", "~> 1.1"
 
   spec.add_dependency "opentracing", "~> 0.3"
-  spec.add_dependency "rack-tracer", "~>0.8.0"
+  spec.add_dependency "rack-tracer", "~>0.8"
 
 end

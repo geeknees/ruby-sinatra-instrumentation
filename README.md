@@ -13,7 +13,7 @@ Auto-instrumenter for Sinatra applications. It traces routes using
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sinatra-instrumentation'
+gem 'signalfx-sinatra-instrumentation'
 ```
 
 And then execute:
@@ -22,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sinatra-instrumentation
+    $ gem install signalfx-sinatra-instrumentation
 
 ## Usage
 
